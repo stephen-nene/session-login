@@ -10,5 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 0) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_26_073920) do
+  create_table "users", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "phonenumber", null: false
+    t.integer "role", default: 0
+    t.string "password_digest", null: false
+    t.integer "status", default: 0
+    t.string "profile_image", default: "https://placehold.co/600x400"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
