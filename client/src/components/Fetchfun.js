@@ -21,9 +21,8 @@ function showMessage(type, content, duration) {
     try {
       const response = await axios.get(`${apiUrl}/me`);
       if (response.status === 200) {
-        console.log(response.data)
         dispatch(loginAction(response.data.user));
-        navigate('/dashboard');
+        navigate('/');
         showMessage('success', 'Logged in successfully', 1);
       } else {
         navigate('/login');
@@ -38,6 +37,33 @@ function showMessage(type, content, duration) {
       }
     } 
   };
+  // export const handleGetCurrentUser = (dispatch, navigate, setLoginPrompt) => {
+  //   // Check if user data is in local storage
+  //   const userDataString = localStorage.getItem('userData');
+  
+  //   if (userDataString) {
+  //     try {
+  //       const userData = JSON.parse(userDataString);
+  
+  //       // Check if user data is not expired
+  //       if (userData.expires > new Date().getTime()) {
+  //         // User data is valid, dispatch it
+  //         dispatch(login(userData.data));
+  //         setLoginPrompt(true);
+  //         return; // Exit the function
+  //       }
+  //     } catch (error) {
+  //       // Handle JSON parsing error
+  //       console.error('Error parsing user data:', error);
+  //     }
+  //   }
+  //   console.log('error')
+  
+  //   // If no valid user data found in local storage, you can handle it here
+  //   // For example, redirect the user to the login page
+  //   // setTimeout(() => { navigate('/login'); }, 3);
+  // };
+  
   
   export const handleServerLogin = async (formData, dispatch, navigate) => {
     const loadingMessage = showMessage('loading', 'Logging in ...', 0);
@@ -47,7 +73,7 @@ function showMessage(type, content, duration) {
       if (response.status === 200) {
         dispatch(loginAction(response.data.user));
         showMessage('success', 'Logged in successfully', 1);
-        navigate('/dashboard');
+        navigate('/profile');
       } else {
         showMessage('error', 'Login failed. Please try again.', 1);
       }

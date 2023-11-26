@@ -39,7 +39,7 @@ module Api
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
 
-    config.action_dispatch.cookies_same_site_protection = :None
+    # config.action_dispatch.cookies_same_site_protection = :None
 
     config.middleware.insert_before 0, Rack::Cors
 

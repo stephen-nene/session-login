@@ -14,10 +14,10 @@ function Dashboard({  }) {
       >
         <div className="container mx-auto text-center">home</div>
         <div className="flex justify-center container mx-auto text-center">
-          {user ? (
+          {!user ? (
             <>
               <p>Not yet logged in. Proceed to</p>
-              <Link className="ml-3 text-blue-500">Login</Link>
+              <Link to='/login' className="ml-3 text-blue-500">Login</Link>
             </>
           ) : (
             <>

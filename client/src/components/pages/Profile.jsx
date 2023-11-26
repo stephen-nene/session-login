@@ -4,7 +4,7 @@ import { IoCloseSharp, IoPencilOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-// import { logout } from "../../store/actions/userAction";
+import { logout } from "../../store/actions/userAction"
 // import { handleServerLogout } from "../Fetchfun";
 
 function Profile({ darkmode }) {
@@ -16,7 +16,9 @@ function Profile({ darkmode }) {
 
   
   const handleLogout = () => {
-    handleServerLogout(dispatch,navigate)
+    // Dispatch an action to logout the user
+    // handleServerLogout(dispatch,navigate)
+    dispatch(logout());
   };
 
   const handleUpdateProfile = () => {

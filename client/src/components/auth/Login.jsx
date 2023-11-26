@@ -5,7 +5,7 @@ import { message } from "antd";
 import { useDispatch } from "react-redux";
 
 import { loginAction } from "../../store/actions/userAction";
-// import { handleServerLogin } from "../Fetchfun";
+import { handleServerLogin } from "../Fetchfun";
 
 
 
@@ -54,7 +54,7 @@ function Login({ darkmode }) {
         </div>
         <div className="flex flex-col my-auto md:flex-1">
           <div className="flex items-center justify-center bg-gray-00">
-            <form action="">
+            {/* <form action=""> */}
 
             <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
               <h2 className="text-2xl font-bold mb-4">Login</h2>
@@ -134,7 +134,7 @@ function Login({ darkmode }) {
                 </p>
               </div>
             </div>
-            </form>
+            {/* </form> */}
           </div>
         </div>
       </div>
