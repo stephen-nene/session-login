@@ -14,7 +14,7 @@ cd ..
 
 # Step 4: Copying assets from the client's dist directory to the API's public directory
 echo "Step 4: Copying assets from the client's dist directory to the API's public directory..."
-cp -r client/dist/* api/public/
+cp -r client/dist/* backend/public/
 
 # Completion: Script finished!
 echo "Script completed. Assets have been copied to the API's public directory."
